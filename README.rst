@@ -1,4 +1,26 @@
-.. image:: https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true
+..
+    ToDo:
+    [ ] Change dark theme image to be white letters.
+    [ ] Change structure
+            - Overview
+            - TOC
+            - Installation instructions (quickstart/quick tour?)
+            - Why should I use IVY? (?) maybe when is better
+            - Why shouldn't I use Ivy (?) maybe when is better
+            - Examples
+            - Documentation
+            - Contributing
+            - Community
+            - License
+            - Citing
+    [ ] Examples
+            - Dropdowns for the examples framework-wise
+    [ ] Navbar in the top
+    [ ] 
+
+.. image:: https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true#gh-dark-mode-only
+   :width: 100%
+.. image:: https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true#gh-light-mode-only
    :width: 100%
 
 .. raw:: html
@@ -32,6 +54,15 @@
     </div>
     <br clear="all" />
 
+.. raw:: html
+
+    <div style="display: block;" align="center">
+    <b><a href="">Website</a></b> | <b><a href="">Docs</a></b> | <b><a href="">Examples</a></b> | <b><a href="">Design</a></b> | <b><a href="">FAQ</a></b>
+    </div>
+    <br clear="all" />
+
+ToDo: Maybe rephrase this
+
 **We’re on a mission to unify all ML frameworks 💥 + automate code conversions 🔄. pip install ivy-core 🚀, join our growing community 😊, and lets-unify.ai! 🦾**
 
 .. raw:: html
@@ -56,6 +87,99 @@
         <img width="6%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/empty.png">
     </div>
 
+What is Ivy?
+----------
+
+ToDo: Short paragraph abouth both functionalities, subparagraph about "Why should I use Ivy?"
+
+Quickstart
+----------
+
+ToDo: Installation instruction, including pip, conda, docker (maybe some of this are collapsed). Probably good to include info on how to specify frameworks, etc.
+
+Examples
+--------
+
+You can use Ivy to gain access to every Machine Learning or Deep Learning project out there, independently on the framework you are using!
+
+.. code-block:: python
+
+    import ivy
+
+    ivy.set_backend('torch')  # change to any backend!
+    model = MyModel()
+    optimizer = ivy.Adam(1e-4)
+    x_in = ivy.array([1., 2., 3.])
+    target = ivy.array([0.])
+
+There are a lot more examples in out examples page but feel free to check out some more framework-specific examples here :arrow_down:
+
+.. raw:: html
+
+   <details>
+   <summary><h3>I'm using PyTorch&ensp;<img style="height: 1.2em; vertical-align:-20%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/PyTorch_logo_icon.svg/640px-PyTorch_logo_icon.svg.png"></h3></summary>
+      <blockquote>If you are a PyTorch user, you can use Ivy to execute code from any other framework!
+         <details>
+            <summary><h4>From TensorFlow</h4></summary>
+            <blockquote>
+               <details>
+                  <summary>Any function</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any model</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any library</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+            </blockquote>
+        </details>
+     </blockquote>
+   </details>
+
+   <h3>I'm using Ivy&ensp;<img style="height: 1.75em; vertical-align:-40%" src="https://saas.lets-unify.ai/static/ivy.svg"></h3>
+   
+Or you can use Ivy as a framework, breaking yourself (and your code) free from deciding which community to support, allowing anyone to run your code in their framework of choice!
+
+.. code-block:: python
+
+    import ivy
+
+    class MyModel(ivy.Module):
+        def __init__(self):
+            self.linear0 = ivy.Linear(3, 64)
+            self.linear1 = ivy.Linear(64, 1)
+            ivy.Module.__init__(self)
+
+        def _forward(self, x):
+            x = ivy.relu(self.linear0(x))
+            return ivy.sigmoid(self.linear1(x))
+
+    ivy.set_backend('torch')  # change to any backend!
+    model = MyModel()
+    optimizer = ivy.Adam(1e-4)
+    x_in = ivy.array([1., 2., 3.])
+    target = ivy.array([0.])
+
+    def loss_fn(v):
+        out = model(x_in, v=v)
+        return ivy.mean((out - target)**2)
+
+    for step in range(100):
+        loss, grads = ivy.execute_with_gradients(loss_fn, model.v)
+        model.v = optimizer.step(model.v, grads)
+        print('step {} loss {}'.format(step, ivy.to_numpy(loss).item()))
+
+    print('Finished training!')
+
 
 .. _docs: https://lets-unify.ai/ivy
 .. _Colabs: https://drive.google.com/drive/folders/16Oeu25GrQsEJh8w2B0kSrD93w4cWjJAM?usp=sharing
@@ -72,7 +196,7 @@ Contents
 * `Extensions`_
 * `Contributing`_
 
-Overview
+Overview ToDo: Refactor this
 --------
 
 Ivy is an ML framework that currently supports JAX, TensorFlow, PyTorch, and Numpy.
@@ -99,7 +223,7 @@ If you would like to contribute,
 please check out our `contributor guide`_,
 and take a look at the `open tasks`_ if you'd like to dive straight in! 🧑‍💻
 
-Quick Start
+Quick Start ToDo: Refactor this
 -----------
 
 Ivy can be installed like so: ``pip install ivy-core``
@@ -200,7 +324,7 @@ You should then see output like the following:
    ivy.backend_handler                    ivy.reduce_max(                           ivy.zeros(
    ivy.gather_nd(                         ivy.reduce_mean(                          ivy.zeros_like(
 
-Background
+Background ToDo: Maybe remove this for now?
 ----------
 
 | (a) `ML Explosion <https://lets-unify.ai/ivy/background/ml_explosion.html>`_
@@ -212,7 +336,7 @@ Background
 | (c) `Standardization <https://lets-unify.ai/ivy/background/standardization.html>`_
 | We’re collaborating with The `Consortium for Python Data API Standards <https://data-apis.org>`_
 
-Design
+Design ToDo: Maybe remove this for now?
 ------
 
 | Ivy can fulfill two distinct purposes:
@@ -240,7 +364,7 @@ Design
 | Ivy Container ✅
 | Ivy Array 🚧
 
-Extensions
+Extensions ToDo: Maybe remove this for now?
 ----------
 
 | (a) `Applied Libraries <https://lets-unify.ai/ivy/extensions/applied_libraries.html>`_ ✅
@@ -249,12 +373,38 @@ Extensions
 | (b) **Builder [page coming soon!]** ✅
 | :code:`ivy.Trainer`, :code:`ivy.Dataset`, :code:`ivy.Dataloader` and other helpful classes and functions for creating training workflows in only a few lines of code
 
+
+Documentation
+------------
+
+ToDo: Text about where to find the docs, how are they structured, etc. Maybe move this above examples
+
+
 Contributing
 ------------
 
+ToDo: Empashize this
 Join our community as a code contributor, and help accelerate our journey to unify all ML frameworks!
 Check out all of our open tasks, and find out more info in our
 `Contributing <https://lets-unify.ai/ivy/contributing.html>`_ guide!
+
+.. raw:: html
+
+   <a href="https://github.com/unifyai/ivy/graphs/contributors">
+     <img src="https://contrib.rocks/image?repo=unifyai/ivy&anon=0&columns=20&max=100" />
+   </a>
+
+Community
+------------
+
+ToDo: Text about discord, twitter, etc.
+
+
+License
+------------
+
+ToDo: Licenses
+
 
 Citation
 --------
