@@ -117,7 +117,7 @@ There are a lot more examples in out examples page but feel free to check out so
 .. raw:: html
 
    <details>
-   <summary><h3>I'm using PyTorch&ensp;<img style="height: 1.2em; vertical-align:-20%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/PyTorch_logo_icon.svg/640px-PyTorch_logo_icon.svg.png"></h3></summary>
+   <summary><h3>I'm using PyTorch&ensp;<img style="height: 1.2em; vertical-align:-20%" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/pytorch_logo.png"></h3></summary>
       <blockquote>If you are a PyTorch user, you can use Ivy to execute code from any other framework!
          <details>
             <summary><h4>From TensorFlow</h4></summary>
@@ -142,6 +142,289 @@ There are a lot more examples in out examples page but feel free to check out so
                </details>
             </blockquote>
         </details>
+        
+        <details>
+            <summary><h4>From Jax</h4></summary>
+            <blockquote>
+               <details>
+                  <summary>Any function</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any model</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any library</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+            </blockquote>
+        </details>
+        
+        <details>
+            <summary><h4>From NumPy</h4></summary>
+            <blockquote>
+               <details>
+                  <summary>Any function</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any model</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any library</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+            </blockquote>
+        </details>
+        
+     </blockquote>
+   </details>
+
+   <details>
+   <summary><h3>I'm using TensorFlow&ensp;<img style="height: 1.2em; vertical-align:-20%" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/tensorflow_logo.png"></h3></summary>
+      <blockquote>If you are a PyTorch user, you can use Ivy to execute code from any other framework!
+         <details>
+            <summary><h4>From PyTorch</h4></summary>
+            <blockquote>
+               <details>
+                  <summary>Any function</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any model</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any library</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+            </blockquote>
+        </details>
+        
+        <details>
+            <summary><h4>From Jax</h4></summary>
+            <blockquote>
+               <details>
+                  <summary>Any function</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any model</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any library</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+            </blockquote>
+        </details>
+        
+        <details>
+            <summary><h4>From NumPy</h4></summary>
+            <blockquote>
+               <details>
+                  <summary>Any function</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any model</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any library</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+            </blockquote>
+        </details>
+        
+     </blockquote>
+   </details>
+   
+      <details>
+   <summary><h3>I'm using Jax&ensp;<img style="height: 1.2em; vertical-align:-20%" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/jax_logo.png"></h3></summary>
+      <blockquote>If you are a PyTorch user, you can use Ivy to execute code from any other framework!
+         <details>
+            <summary><h4>From PyTorch</h4></summary>
+            <blockquote>
+               <details>
+                  <summary>Any function</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any model</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any library</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+            </blockquote>
+        </details>
+        
+        <details>
+            <summary><h4>From TensorFlow</h4></summary>
+            <blockquote>
+               <details>
+                  <summary>Any function</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any model</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any library</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+            </blockquote>
+        </details>
+        
+        <details>
+            <summary><h4>From NumPy</h4></summary>
+            <blockquote>
+               <details>
+                  <summary>Any function</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any model</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any library</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+            </blockquote>
+        </details>
+        
+     </blockquote>
+   </details>
+   
+      <details>
+   <summary><h3>I'm using NumPy&ensp;<img style="height: 1.2em; vertical-align:-20%" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/numpy_logo.png"></h3></summary>
+      <blockquote>If you are a PyTorch user, you can use Ivy to execute code from any other framework!
+         <details>
+            <summary><h4>From PyTorch</h4></summary>
+            <blockquote>
+               <details>
+                  <summary>Any function</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any model</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any library</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+            </blockquote>
+        </details>
+        
+        <details>
+            <summary><h4>From TensorFlow</h4></summary>
+            <blockquote>
+               <details>
+                  <summary>Any function</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any model</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any library</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+            </blockquote>
+        </details>
+        
+        <details>
+            <summary><h4>From Jax</h4></summary>
+            <blockquote>
+               <details>
+                  <summary>Any function</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any model</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+               <details>
+                  <summary>Any library</summary>
+                  <blockquote>
+                     ToDo: Add code
+                  </blockquote>
+               </details>
+            </blockquote>
+        </details>
+        
      </blockquote>
    </details>
 
