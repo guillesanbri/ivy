@@ -552,6 +552,9 @@ Almost all of the content of the repo is licensed under the Apache 2.0 license, 
 Citation
 --------
 
+If you use Ivy for your work, please don't forget to give proper credit by including the accompanying paper 📄 in your references. 
+It's a small way to show appreciation and help to continue to support this and other open source projects. 🙌
+
 ::
 
     @article{lenton2021ivy,
