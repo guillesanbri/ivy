@@ -513,7 +513,7 @@ Contributing
 ------------
 
 We believe that everyone can contribute and make a difference. Whether it's writing code 💻, fixing bugs 🐛, 
-or simply sharing feedback 💬, your contributions are definitely valued and appreciated 🙌 
+or simply sharing feedback 💬, your contributions are definitely welcome and appreciated 🙌 
 
 Check out all of our open tasks, and find out more info in our `Contributing <https://lets-unify.ai/ivy/contributing.html>`_ guide in the docs!
 
@@ -527,6 +527,14 @@ Join our amazing community as a code contributor, and help accelerate our journe
 
 Community
 ------------
+
+ToDo: Add links to discord and twitter
+
+In order to achieve the ambitious goal of unifying AI we definitely need as many hands as possible on it! Whether you are a seasoned developer or just starting out, you'll find a place here! Join the Ivy community in our Discord 👾 server, which is the perfect place to ask questions, share ideas, and get help from both fellow developers and the Ivy Team directly!
+
+Also! Feel free to follow us in Twitter 🐦 as well, we use it to share updates, sneak peeks, and all sorts of relevant news, certainly a great way to stay in the loop 😄
+
+Can't wait to see you there!
 
 ToDo: Text about discord, twitter, etc.
 
