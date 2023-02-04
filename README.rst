@@ -536,13 +536,17 @@ Also! Feel free to follow us in Twitter 🐦 as well, we use it to share updates
 
 Can't wait to see you there!
 
-ToDo: Text about discord, twitter, etc.
-
 
 License
 ------------
 
-ToDo: Licenses
+FixMe: Should this be included here at all? Maybe we can remove this section
+
+FixMe: Don't know if this is the place to explain that transpilation will be free for students/researchers
+
+ToDo: links if we keep it
+
+Almost all of the content of the repo is licensed under the Apache 2.0 license, which (TLDR; too legal, didn't read) allows you to use the code for just about anything. There is one caveat, the compiler/transpiler has its own license which you can access here, but fear not! code transpilation will always be free for academics and students 🧑‍🎓!
 
 
 Citation
