@@ -512,10 +512,12 @@ Or you can use Ivy as a framework, breaking yourself (and your code) free from d
 Contributing
 ------------
 
-ToDo: Empashize this
-Join our community as a code contributor, and help accelerate our journey to unify all ML frameworks!
-Check out all of our open tasks, and find out more info in our
-`Contributing <https://lets-unify.ai/ivy/contributing.html>`_ guide!
+We believe that everyone can contribute and make a difference. Whether it's writing code 💻, fixing bugs 🐛, 
+or simply sharing feedback 💬, your contributions are definitely valued and appreciated 🙌 
+
+Check out all of our open tasks, and find out more info in our `Contributing <https://lets-unify.ai/ivy/contributing.html>`_ guide in the docs!
+
+Join our amazing community as a code contributor, and help accelerate our journey to unify all ML frameworks!
 
 .. raw:: html
 
