@@ -135,7 +135,7 @@ ToDo: Installation instruction, including pip, conda, docker (maybe some of this
 Documentation
 -------------
 
-ToDo: Text about where to find the docs, how are they structured, etc. Maybe move this above examples
+ToDo: Text about where to find the docs, how are they structured, etc.
 
 
 Examples
