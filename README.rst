@@ -86,16 +86,49 @@ ToDo: Maybe rephrase this
         </a>
         <img width="6%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/empty.png">
     </div>
+    
+Contents
+--------
 
-What is Ivy?
-----------
+* `Overview`_
+* `Ivy as a transpiler`_
+* `Ivy as a framework`_
+* `Quick Start`_
+* `Documentation`_
+* `Examples`_
+* `Contributing`_
+* `Community`_
+* `License`_
+* `Citation`_
 
-ToDo: Short paragraph abouth both functionalities, subparagraph about "Why should I use Ivy?"
+Overview
+--------
 
-Quickstart
-----------
+Lorem ipsum
+
+Ivy as a transpiler
+-------------------
+
+When should I use Ivy as a transpiler?
+######################################
+
+Ivy as a framework
+-------------------
+
+When should I use Ivy as a framework?
+######################################
+
+Quick Start
+-----------
 
 ToDo: Installation instruction, including pip, conda, docker (maybe some of this are collapsed). Probably good to include info on how to specify frameworks, etc.
+
+
+Documentation
+-------------
+
+ToDo: Text about where to find the docs, how are they structured, etc. Maybe move this above examples
+
 
 Examples
 --------
@@ -463,21 +496,55 @@ Or you can use Ivy as a framework, breaking yourself (and your code) free from d
 
     print('Finished training!')
 
-
 .. _docs: https://lets-unify.ai/ivy
 .. _Colabs: https://drive.google.com/drive/folders/16Oeu25GrQsEJh8w2B0kSrD93w4cWjJAM?usp=sharing
 .. _`contributor guide`: https://lets-unify.ai/ivy/contributing.html
 .. _`open tasks`: https://lets-unify.ai/ivy/contributing/open_tasks.html
 
-Contents
+Contributing
+------------
+
+ToDo: Empashize this
+Join our community as a code contributor, and help accelerate our journey to unify all ML frameworks!
+Check out all of our open tasks, and find out more info in our
+`Contributing <https://lets-unify.ai/ivy/contributing.html>`_ guide!
+
+.. raw:: html
+
+   <a href="https://github.com/unifyai/ivy/graphs/contributors">
+     <img src="https://contrib.rocks/image?repo=unifyai/ivy&anon=0&columns=20&max=100" />
+   </a>
+
+Community
+------------
+
+ToDo: Text about discord, twitter, etc.
+
+
+License
+------------
+
+ToDo: Licenses
+
+
+Citation
 --------
 
-* `Overview`_
-* `Quick Start`_
-* `Background`_
-* `Design`_
-* `Extensions`_
-* `Contributing`_
+::
+
+    @article{lenton2021ivy,
+      title={Ivy: Templated deep learning for inter-framework portability},
+      author={Lenton, Daniel and Pardo, Fabio and Falck, Fabian and James, Stephen and Clark, Ronald},
+      journal={arXiv preprint arXiv:2102.02886},
+      year={2021}
+    }
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 
 Overview ToDo: Refactor this
 --------
@@ -647,56 +714,7 @@ Design ToDo: Maybe remove this for now?
 | Ivy Container ✅
 | Ivy Array 🚧
 
-Extensions ToDo: Maybe remove this for now?
+Extensions
 ----------
 
-| (a) `Applied Libraries <https://lets-unify.ai/ivy/extensions/applied_libraries.html>`_ ✅
-| Ivy libraries in mechanics, vision, robotics, memory, and other areas
-|
-| (b) **Builder [page coming soon!]** ✅
-| :code:`ivy.Trainer`, :code:`ivy.Dataset`, :code:`ivy.Dataloader` and other helpful classes and functions for creating training workflows in only a few lines of code
-
-
-Documentation
-------------
-
-ToDo: Text about where to find the docs, how are they structured, etc. Maybe move this above examples
-
-
-Contributing
-------------
-
-ToDo: Empashize this
-Join our community as a code contributor, and help accelerate our journey to unify all ML frameworks!
-Check out all of our open tasks, and find out more info in our
-`Contributing <https://lets-unify.ai/ivy/contributing.html>`_ guide!
-
-.. raw:: html
-
-   <a href="https://github.com/unifyai/ivy/graphs/contributors">
-     <img src="https://contrib.rocks/image?repo=unifyai/ivy&anon=0&columns=20&max=100" />
-   </a>
-
-Community
-------------
-
-ToDo: Text about discord, twitter, etc.
-
-
-License
-------------
-
-ToDo: Licenses
-
-
-Citation
---------
-
-::
-
-    @article{lenton2021ivy,
-      title={Ivy: Templated deep learning for inter-framework portability},
-      author={Lenton, Daniel and Pardo, Fabio and Falck, Fabian and James, Stephen and Clark, Ronald},
-      journal={arXiv preprint arXiv:2102.02886},
-      year={2021}
-    }
+ToDo: Remove or revamp
