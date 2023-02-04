@@ -57,13 +57,27 @@
 .. raw:: html
 
     <div style="display: block;" align="center">
-    <b><a href="">Website</a></b> | <b><a href="">Docs</a></b> | <b><a href="">Examples</a></b> | <b><a href="">Design</a></b> | <b><a href="">FAQ</a></b>
+    <b><a href="">Website</a></b> | <b><a href="">Docs</a></b> | <b><a href="">Examples</a></b> | <b><a href="">Design</a></b> | <b><a href="">FAQ</a></b><br><br>
+    
+    <b>All of AI, at your fingertips</b>
+    
     </div>
     <br clear="all" />
 
-ToDo: Maybe rephrase this
+------------------------------------------------------
 
-**We’re on a mission to unify all ML frameworks 💥 + automate code conversions 🔄. pip install ivy-core 🚀, join our growing community 😊, and lets-unify.ai! 🦾**
+Ivy is both a ML transpiler and a framework, currently supporting JAX, TensorFlow, PyTorch and Numpy.
+
+Ivy unifies all ML frameworks 💥 enabling you not only to **write code that can be used with any of these frameworks as the backend**, 
+but also to **convert 🔄 any function written in any of them to code in your preferred framework!**
+
+You can check out `Ivy as a transpiler`_ and `Ivy as a framework`_ to learn more about this, try out Ivy
+straight away going through the `Quick Start`_, or dive deep into Ivy's `Documentation`_ and `Examples`_!
+
+If you would like to contribute, you can join our growing `community`_ 🌍, check out our `contributor guide`_,
+and take a look at the `open tasks`_ if you'd like to dive straight in 🧑‍💻 
+
+**lets-unify.ai together 🦾**
 
 .. raw:: html
 
@@ -86,11 +100,10 @@ ToDo: Maybe rephrase this
         </a>
         <img width="6%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/empty.png">
     </div>
-    
+
 Contents
 --------
 
-* `Overview`_
 * `Ivy as a transpiler`_
 * `Ivy as a framework`_
 * `Quick Start`_
@@ -100,11 +113,6 @@ Contents
 * `Community`_
 * `License`_
 * `Citation`_
-
-Overview
---------
-
-Lorem ipsum
 
 Ivy as a transpiler
 -------------------
