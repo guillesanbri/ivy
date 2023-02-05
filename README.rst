@@ -18,6 +18,8 @@
     [ ] Navbar in the top
     [ ] 
 
+.. |torch| image:: https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/pytorch_logo.png
+
 .. image:: https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true#gh-dark-mode-only
    :width: 100%
 .. image:: https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true#gh-light-mode-only
@@ -210,6 +212,8 @@ Lastly, you can also find there the **Related Work** section, which paints a cle
 Examples
 --------
 
+
+
 You can use Ivy to gain access to every Machine Learning or Deep Learning project out there, independently on the framework you are using!
 
 .. code-block:: python
@@ -234,21 +238,39 @@ There are a lot more examples in out examples page but feel free to check out so
             <blockquote>
                <details>
                   <summary>Any function</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any model</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any library</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
             </blockquote>
         </details>
@@ -258,21 +280,39 @@ There are a lot more examples in out examples page but feel free to check out so
             <blockquote>
                <details>
                   <summary>Any function</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any model</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any library</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
             </blockquote>
         </details>
@@ -282,21 +322,39 @@ There are a lot more examples in out examples page but feel free to check out so
             <blockquote>
                <details>
                   <summary>Any function</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any model</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any library</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
             </blockquote>
         </details>
@@ -312,21 +370,39 @@ There are a lot more examples in out examples page but feel free to check out so
             <blockquote>
                <details>
                   <summary>Any function</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any model</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any library</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
             </blockquote>
         </details>
@@ -336,21 +412,39 @@ There are a lot more examples in out examples page but feel free to check out so
             <blockquote>
                <details>
                   <summary>Any function</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any model</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any library</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
             </blockquote>
         </details>
@@ -360,21 +454,39 @@ There are a lot more examples in out examples page but feel free to check out so
             <blockquote>
                <details>
                   <summary>Any function</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any model</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any library</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
             </blockquote>
         </details>
@@ -390,21 +502,39 @@ There are a lot more examples in out examples page but feel free to check out so
             <blockquote>
                <details>
                   <summary>Any function</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any model</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any library</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
             </blockquote>
         </details>
@@ -414,21 +544,39 @@ There are a lot more examples in out examples page but feel free to check out so
             <blockquote>
                <details>
                   <summary>Any function</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any model</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any library</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
             </blockquote>
         </details>
@@ -438,21 +586,39 @@ There are a lot more examples in out examples page but feel free to check out so
             <blockquote>
                <details>
                   <summary>Any function</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any model</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any library</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
             </blockquote>
         </details>
@@ -468,21 +634,39 @@ There are a lot more examples in out examples page but feel free to check out so
             <blockquote>
                <details>
                   <summary>Any function</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any model</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any library</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
             </blockquote>
         </details>
@@ -492,21 +676,39 @@ There are a lot more examples in out examples page but feel free to check out so
             <blockquote>
                <details>
                   <summary>Any function</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any model</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any library</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
             </blockquote>
         </details>
@@ -516,21 +718,39 @@ There are a lot more examples in out examples page but feel free to check out so
             <blockquote>
                <details>
                   <summary>Any function</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any model</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
                <details>
                   <summary>Any library</summary>
-                  <blockquote>
-                     ToDo: Add code
-                  </blockquote>
+                  
+.. code-block:: python
+
+    import ivy
+
+    # ToDo: Write code
+
+.. raw:: html
+
                </details>
             </blockquote>
         </details>
