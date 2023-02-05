@@ -97,7 +97,7 @@ but also to **convert 🔄 any function written in any of them to code in your p
 You can check out `Ivy as a transpiler`_ and `Ivy as a framework`_ to learn more about this, try out Ivy
 straight away going through the `Setting up Ivy`_ section, or dive deep into Ivy's `Documentation`_ and `Examples`_!
 
-If you would like to contribute, you can join our growing `community`_ 🌍, check out our `contributor guide`_,
+If you would like to contribute, you can join our growing `Community`_ 🌍, check out our `Contributing`_ guide,
 and take a look at the `open tasks`_ if you'd like to dive straight in 🧑‍💻 
 
 **lets-unify.ai together 🦾**
