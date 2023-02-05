@@ -138,7 +138,7 @@ Installing using pip
 
 The easiest way to set up Ivy is to install it using pip with the following command:
 
-.. code-block:: console
+.. code-block:: bash
 
     pip install ivy-core
 
@@ -163,15 +163,19 @@ Docker
 
 If you prefer to use containers, we also have pre-built Docker images with all the supported frameworks and some relevant packages already installed, which you can pull from:
 
-.. code-block:: console
+.. code-block:: bash
 
     docker pull unifyai/ivy:latest
 
-ToDo: docker with GPU support should be explained here
+.. code-block:: bash
+
+    ToDo: docker with GPU support should be explained here
 
 Obviously, you can also install Ivy from source if you want to take advantage of the latest changes, but we can't ensure that everything will work as expected :sweat_smile:
 
-ToDo: instructions
+.. code-block:: bash
+
+    ToDo: instructions
 
 
 If you want to set up testing and various frameworks it's probably best to check out the **Contributing - Setting Up** page, where OS-specific and IDE-specific instructions and video tutorials to do so are available!
@@ -182,7 +186,9 @@ Access to the Transpiler API
 
 If you only want to use Ivy as a framework you can ignore this entirely, but if you want to try out Ivy's transpiler you'll have to sign up for an API key following the steps below. Fear not! This is entirely free, but keep in mind that we are on a limited time alpha, so expect some rough edges and share with us any bug you encounter! 
 
-ToDo: add instructions and screenshots to login, setting up the API key etc.
+.. code-block:: bash
+
+    ToDo: add instructions and screenshots to login, setting up the API key etc.
 
 
 Using Ivy
@@ -190,9 +196,13 @@ Using Ivy
 
 You can find quite a lot more examples in the corresponding section below, but using Ivy is as simple as:
 
-ToDo: short code snippet showing multi backend support
+.. code-block:: python
 
-ToDo: short code snippet showing transpilation
+    ToDo: short code snippet showing multi backend support
+
+.. code-block:: python
+
+    ToDo: short code snippet showing transpilation
 
 
 Documentation
@@ -212,7 +222,7 @@ Lastly, you can also find there the **Related Work** section, which paints a cle
 Examples
 --------
 
-
+(ToDo)
 
 You can use Ivy to gain access to every Machine Learning or Deep Learning project out there, independently on the framework you are using!
 
@@ -835,14 +845,14 @@ FixMe: Don't know if this is the place to explain that transpilation will be fre
 
 ToDo: links if we keep it
 
-Almost all of the content of the repo is licensed under the Apache 2.0 license, which (TLDR; too legal, didn't read) allows you to use the code for just about anything. There is one caveat, the compiler/transpiler has its own license which you can access here, but fear not! code transpilation will always be free for academics and students 🧑‍🎓!
+Almost all of the content of the repo is licensed under the Apache 2.0 license, which (TLDR; too legal, didn't read) allows you to use the code for just about anything. There is one caveat, the compiler/transpiler has its own license which you can access here, but fear not! code transpilation will always be free for academics and students 🧑‍🎓
 
 
 Citation
 --------
 
 If you use Ivy for your work, please don't forget to give proper credit by including the accompanying paper 📄 in your references. 
-It's a small way to show appreciation and help to continue to support this and other open source projects. 🙌
+It's a small way to show appreciation and help to continue to support this and other open source projects 🙌
 
 ::
 
