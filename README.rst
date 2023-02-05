@@ -1,24 +1,8 @@
 ..
     ToDo:
-    [ ] Change dark theme image to be white letters.
-    [ ] Change structure
-            - Overview
-            - TOC
-            - Installation instructions (quickstart/quick tour?)
-            - Why should I use IVY? (?) maybe when is better
-            - Why shouldn't I use Ivy (?) maybe when is better
-            - Examples
-            - Documentation
-            - Contributing
-            - Community
-            - License
-            - Citing
-    [ ] Examples
-            - Dropdowns for the examples framework-wise
-    [ ] Navbar in the top
-    [ ] 
-
-.. |torch| image:: https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/pytorch_logo.png
+    [ ] Change dark theme image to be white letters
+    [ ] Remove links from collapsed examples
+    [ ] Review typos
 
 .. image:: https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true#gh-dark-mode-only
    :width: 100%
@@ -119,17 +103,88 @@ Contents
 Ivy as a transpiler
 -------------------
 
+Ivy's transpiler allow you to use code from any other framework (and soon, from any other version of the same framework!) in your own code with just one line of code. To do so, TODO. 
+
+You can find more information about Ivy as a transpiler in the docs.
+
 When should I use Ivy as a transpiler?
 ######################################
+
+If you want to use building blocks published in other frameworks (neural networks, layers, array computing libraries, training pipelines...), you want to integrate code developed in various frameworks, or maybe straight up move code from one framework to another, the transpiler is definitely the tool 🔧 for the job! As the output of transpilation is native code in the target framework, you can use the converted code just as if it was code originally developed in that framework, appliying framework-specific optimizations or tools, making a whole new level of code available to you.
 
 Ivy as a framework
 -------------------
 
+TODO Lorem ipsum.
+TODO: Ivy API, Ivy stateful API, Ivy Container, Ivy array, slim down examples below to build just one example
+TODO: Review this:
+
+**Framework Agnostic Functions**
+
+In the example below we show how Ivy's concatenation function is compatible with tensors from different frameworks.
+This is the same for ALL Ivy functions. They can accept tensors from any framework and return the correct result.
+
+.. code-block:: python
+
+    import jax.numpy as jnp
+    import tensorflow as tf
+    import numpy as np
+    import torch
+
+    import ivy
+
+    jax_concatted   = ivy.concat((jnp.ones((1,)), jnp.ones((1,))), -1)
+    tf_concatted    = ivy.concat((tf.ones((1,)), tf.ones((1,))), -1)
+    np_concatted    = ivy.concat((np.ones((1,)), np.ones((1,))), -1)
+    torch_concatted = ivy.concat((torch.ones((1,)), torch.ones((1,))), -1)
+
+.. code-block:: python
+
+    import ivy
+
+    class MyModel(ivy.Module):
+        def __init__(self):
+            self.linear0 = ivy.Linear(3, 64)
+            self.linear1 = ivy.Linear(64, 1)
+            ivy.Module.__init__(self)
+
+        def _forward(self, x):
+            x = ivy.relu(self.linear0(x))
+            return ivy.sigmoid(self.linear1(x))
+
+    ivy.set_backend('torch')  # change to any backend!
+    model = MyModel()
+    optimizer = ivy.Adam(1e-4)
+    x_in = ivy.array([1., 2., 3.])
+    target = ivy.array([0.])
+
+    def loss_fn(v):
+        out = model(x_in, v=v)
+        return ivy.mean((out - target)**2)
+
+    for step in range(100):
+        loss, grads = ivy.execute_with_gradients(loss_fn, model.v)
+        model.v = optimizer.step(model.v, grads)
+        print('step {} loss {}'.format(step, ivy.to_numpy(loss).item()))
+
+    print('Finished training!')
+
+This example uses PyTorch as a backend framework,
+but the backend can easily be changed to your favorite frameworks, such as TensorFlow, or JAX.
+
+TODO: Mention extensions
+
+You can find more information about Ivy as a framework in the docs.
+
 When should I use Ivy as a framework?
 ######################################
 
+As Ivy supports multiple backends, writing code in Ivy breaks you free from framework limitations. If you want to publish highly flexible code for everyone to use, independently of the framework they are using, or you plan to develop ML-related tools and want them to be interoperable with not only the already existing frameworks, but also with future frameworks, then Ivy is for you!
+
 Setting up Ivy
 --------------
+
+Lorem ipsum
 
 ToDo: test each one of these procedures in various platforms, add links
 
@@ -870,134 +925,6 @@ It's a small way to show appreciation and help to continue to support this and o
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 
-Overview ToDo: Refactor this
---------
-
-Ivy is an ML framework that currently supports JAX, TensorFlow, PyTorch, and Numpy.
-We’re very excited for you to try it out!
-
-Next on our roadmap is to support automatic code conversions between all frameworks 🔄,
-and add instant multi-framework support for all open-source libraries with only a few lines of code changed!
-Read on to learn more 😊
-
-The docs are split into a number of sub-pages explaining different aspects of why we created Ivy,
-how to use it, what we’ve got planned on our roadmap, and how to contribute!
-Click on the sub-headings below to check out these pages!
-
-We use 🚧 to indicate that the feature being discussed is in development.
-We use ✅ to indicate that it is already implemented!
-
-Check out the docs_ for more info,
-and check out our Google Colabs_ for some interactive demos!
-
-🚨 Ivy is still at a relatively early stage of development.
-Expect breaking changes and sharp edges until we release version 1.2.0 in the next few weeks!
-
-If you would like to contribute,
-please check out our `contributor guide`_,
-and take a look at the `open tasks`_ if you'd like to dive straight in! 🧑‍💻
-
-Quick Start ToDo: Refactor this
------------
-
-Ivy can be installed like so: ``pip install ivy-core``
-You can immediately use Ivy to train a neural network, using your favorite framework in the background, like so:
-
-.. code-block:: python
-
-    import ivy
-
-    class MyModel(ivy.Module):
-        def __init__(self):
-            self.linear0 = ivy.Linear(3, 64)
-            self.linear1 = ivy.Linear(64, 1)
-            ivy.Module.__init__(self)
-
-        def _forward(self, x):
-            x = ivy.relu(self.linear0(x))
-            return ivy.sigmoid(self.linear1(x))
-
-    ivy.set_backend('torch')  # change to any backend!
-    model = MyModel()
-    optimizer = ivy.Adam(1e-4)
-    x_in = ivy.array([1., 2., 3.])
-    target = ivy.array([0.])
-
-    def loss_fn(v):
-        out = model(x_in, v=v)
-        return ivy.mean((out - target)**2)
-
-    for step in range(100):
-        loss, grads = ivy.execute_with_gradients(loss_fn, model.v)
-        model.v = optimizer.step(model.v, grads)
-        print('step {} loss {}'.format(step, ivy.to_numpy(loss).item()))
-
-    print('Finished training!')
-
-This example uses PyTorch as a backend framework,
-but the backend can easily be changed to your favorite frameworks, such as TensorFlow, or JAX.
-
-**Framework Agnostic Functions**
-
-In the example below we show how Ivy's concatenation function is compatible with tensors from different frameworks.
-This is the same for ALL Ivy functions. They can accept tensors from any framework and return the correct result.
-
-.. code-block:: python
-
-    import jax.numpy as jnp
-    import tensorflow as tf
-    import numpy as np
-    import torch
-
-    import ivy
-
-    jax_concatted   = ivy.concat((jnp.ones((1,)), jnp.ones((1,))), -1)
-    tf_concatted    = ivy.concat((tf.ones((1,)), tf.ones((1,))), -1)
-    np_concatted    = ivy.concat((np.ones((1,)), np.ones((1,))), -1)
-    torch_concatted = ivy.concat((torch.ones((1,)), torch.ones((1,))), -1)
-
-To see a list of all Ivy methods, type :code:`ivy.` into a python command prompt and press :code:`tab`.
-You should then see output like the following:
-
-::
-
-   ivy.Container(                         ivy.general                               ivy.reduce_min(
-   ivy.abs(                               ivy.get_device(                           ivy.reduce_prod(
-   ivy.acos(                              ivy.get_num_dims(                         ivy.reduce_sum(
-   ivy.acosh(                             ivy.gradient_descent_update(              ivy.reductions
-   ivy.activations                        ivy.gradient_image(                       ivy.relu(
-   ivy.arange(                            ivy.gradients                             ivy.reshape(
-   ivy.argmax(                            ivy.identity(                             ivy.round(
-   ivy.argmin(                            ivy.image                                 ivy.scatter_nd(
-   ivy.array(                             ivy.indices_where(                        ivy.seed(
-   ivy.asin(                              ivy.inv(                                  ivy.shape(
-   ivy.asinh(                             ivy.layers                                ivy.shuffle(
-   ivy.atan(                              ivy.leaky_relu(                           ivy.sigmoid(
-   ivy.atan2(                             ivy.linalg                                ivy.sin(
-   ivy.atanh(                             ivy.linear(                               ivy.sinh(
-   ivy.bilinear_resample(                 ivy.linspace(                             ivy.softmax(
-   ivy.cast(                              ivy.log(                                  ivy.softplus(
-   ivy.ceil(                              ivy.logic                                 ivy.split(
-   ivy.clip(                              ivy.logical_and(                          ivy.squeeze(
-   ivy.concatenate(                       ivy.logical_not(                          ivy.stack(            
-   ivy.container                          ivy.logical_or(                           ivy.stack_images(
-   ivy.conv2d(                            ivy.math                                  ivy.stop_gradient(
-   ivy.core                               ivy.matmul(                               ivy.svd(
-   ivy.cos(                               ivy.maximum(                              ivy.tan(
-   ivy.cosh(                              ivy.minimum(                              ivy.tanh(
-   ivy.cross(                             ivy.neural_net                            ivy.tile(
-   ivy.cumsum(                            ivy.nn                                    ivy.to_list(
-   ivy.depthwise_conv2d(                  ivy.norm(                                 ivy.to_numpy(
-   ivy.dtype(                             ivy.one_hot(                              ivy.transpose(
-   ivy.execute_with_gradients(            ivy.ones(                                 ivy.unstack(
-   ivy.exp(                               ivy.ones_like(                            ivy.vector_norm(
-   ivy.expand_dims(                       ivy.pinv(                                 ivy.vector_to_skew_symmetric_matrix(
-   ivy.flip(                              ivy.randint(                              ivy.verbosity
-   ivy.floor(                             ivy.random                                ivy.where(
-   ivy.floormod(                          ivy.random_uniform(                       ivy.zero_pad(
-   ivy.backend_handler                    ivy.reduce_max(                           ivy.zeros(
-   ivy.gather_nd(                         ivy.reduce_mean(                          ivy.zeros_like(
-
 Background ToDo: Maybe remove this for now?
 ----------
 
@@ -1037,8 +964,3 @@ Design ToDo: Maybe remove this for now?
 | Ivy stateful API ✅
 | Ivy Container ✅
 | Ivy Array 🚧
-
-Extensions
-----------
-
-ToDo: Remove or revamp
