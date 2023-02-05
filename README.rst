@@ -93,7 +93,7 @@ Ivy unifies all ML frameworks 💥 enabling you not only to **write code that ca
 but also to **convert 🔄 any function written in any of them to code in your preferred framework!**
 
 You can check out `Ivy as a transpiler`_ and `Ivy as a framework`_ to learn more about this, try out Ivy
-straight away going through the `Quick Start`_, or dive deep into Ivy's `Documentation`_ and `Examples`_!
+straight away going through the `Setting up Ivy`_ section, or dive deep into Ivy's `Documentation`_ and `Examples`_!
 
 If you would like to contribute, you can join our growing `community`_ 🌍, check out our `contributor guide`_,
 and take a look at the `open tasks`_ if you'd like to dive straight in 🧑‍💻 
@@ -106,7 +106,7 @@ Contents
 
 * `Ivy as a transpiler`_
 * `Ivy as a framework`_
-* `Quick Start`_
+* `Setting up Ivy`_
 * `Documentation`_
 * `Examples`_
 * `Contributing`_
@@ -126,10 +126,71 @@ Ivy as a framework
 When should I use Ivy as a framework?
 ######################################
 
-Quick Start
------------
+Setting up Ivy
+--------------
 
-ToDo: Installation instruction, including pip, conda, docker (maybe some of this are collapsed). Probably good to include info on how to specify frameworks, etc.
+ToDo: test each one of these procedures in various platforms, add links
+
+Installing using pip
+####################
+
+The easiest way to set up Ivy is to install it using pip with the following command:
+
+.. code-block:: console
+
+    pip install ivy-core
+
+..
+
+    Keep in mind that this won't install any of the underlying frameworks (you will need at least one to run Ivy!). We will (very) soon offer support for multiple versions, but for now we have pinned Ivy to specific versions, so you'll need to install one of these:
+
++------------+-----------------+
+| Framework  | Pinned version  |
++============+=================+
+| PyTorch    | 1.11.0          |
++------------+-----------------+
+| TensorFlow | 2.9.1           |
++------------+-----------------+
+| JAX        | 0.3.14          |
++------------+-----------------+
+| NumPy      | 1.23.0          |
++------------+-----------------+
+
+Docker
+######
+
+If you prefer to use containers, we also have pre-built Docker images with all the supported frameworks and some relevant packages already installed, which you can pull from:
+
+.. code-block:: console
+
+    docker pull unifyai/ivy:latest
+
+ToDo: docker with GPU support should be explained here
+
+Obviously, you can also install Ivy from source if you want to take advantage of the latest changes, but we can't ensure that everything will work as expected :sweat_smile:
+
+ToDo: instructions
+
+
+If you want to set up testing and various frameworks it's probably best to check out the **Contributing - Setting Up** page, where OS-specific and IDE-specific instructions and video tutorials to do so are available!
+
+
+Access to the Transpiler API
+############################
+
+If you only want to use Ivy as a framework you can ignore this entirely, but if you want to try out Ivy's transpiler you'll have to sign up for an API key following the steps below. Fear not! This is entirely free, but keep in mind that we are on a limited time alpha, so expect some rough edges and share with us any bug you encounter! 
+
+ToDo: add instructions and screenshots to login, setting up the API key etc.
+
+
+Using Ivy
+#########
+
+You can find quite a lot more examples in the corresponding section below, but using Ivy is as simple as:
+
+ToDo: short code snippet showing multi backend support
+
+ToDo: short code snippet showing transpilation
 
 
 Documentation
