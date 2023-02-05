@@ -135,7 +135,15 @@ ToDo: Installation instruction, including pip, conda, docker (maybe some of this
 Documentation
 -------------
 
-ToDo: Text about where to find the docs, how are they structured, etc.
+Todo: links
+
+The **Ivy Docs page** holds all the relevant information about Ivy's and it's framework API reference. 
+
+There, you will find the **Design** page, which is an user-focused guide about the architecture and the building blocks of Ivy. Likewise, you can take a look at the **Deep dive**, which is oriented towards potential contributors of the code base and explains the nuances of Ivy in full detail 🔎. 
+
+Another important sections of the docs is **Background**, which contextualises the problem Ivy is trying to solve, and explains both (1) why is important to solve this problem and (2) how we are adhering to existing standards to make this happen. 
+
+Lastly, you can also find there the **Related Work** section, which paints a clear picture of the role Ivy plays in the ML stack, comparing it to other existing solutions in terms of functionalities and level.
 
 
 Examples
