@@ -102,9 +102,34 @@ Contents
 Ivy as a transpiler
 -------------------
 
-Ivy's transpiler allow you to use code from any other framework (and soon, from any other version of the same framework!) in your own code with just one line of code. To do so, TODO. 
+Ivy's transpiler allow you to use code from any other framework (and soon, from any other version of the same framework!) in your own code with just one line of code. To do so, Ivy traces a computational graph and leverages Ivy's frontends and backends to link one framework to the other. 
 
-You can find more information about Ivy as a transpiler in the docs.
+This way, Ivy makes all ML-related projects available for you, independently of the framework you want to use to research, develop, or deploy systems. Feel free to head over to the docs for the full API reference, but the main functions that you'd use probably are:
+
+.. code-block:: python
+
+    ivy.compile()  # Compile a function into an efficient graph, removing Ivy's wrapping and redundant code
+    ivy.transpile()  # Convert an arbitrary function from one framework to another
+    ivy.transpile_module()  # Convert any framework-specific module to another framework
+    # ToDo: Check final signatures of the functions
+
+These functions can be used eagerly and lazily. If you pass the neccesary arguments, the function will be called instantly, otherwise, compilation/transpilation will happen the first time you invoke the function with the proper arguments.
+
+.. code-block:: python
+    
+    import ivy
+    ivy.set_backend("jax")
+
+    def test_fn(x):
+        return jax.numpy.sum(x)
+
+    x1 = ivy.array([1., 2.])
+    eager_graph = ivy.transpile(test_fn, to="torch", args=(x1,))  # Transpilation is called eagerly
+    lazy_graph = ivy.transpile(test_fn, to="torch")  # Transpilation is called lazily, we don't do anything at this point
+    ret = lazy_graph(x1)  # The transpiled graph is initialized, transpilation will happen here
+    ret = lazy_graph(x1)  # This is now torch code and will be called efficiently
+
+If you want to learn more, you can find more information in the Ivy as a transpiler section of the docs.
 
 When should I use Ivy as a transpiler?
 ######################################
