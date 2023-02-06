@@ -3,6 +3,7 @@
     [ ] Change dark theme image to be white letters
     [ ] Remove links from collapsed examples
     [ ] Review typos
+    [ ] Maybe add some images
 
 .. image:: https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true#gh-dark-mode-only
    :width: 100%
@@ -84,7 +85,7 @@ straight away going through the `Setting up Ivy`_ section, or dive deep into Ivy
 If you would like to contribute, you can join our growing `Community`_ 🌍, check out our `Contributing`_ guide,
 and take a look at the `open tasks`_ if you'd like to dive straight in 🧑‍💻 
 
-**lets-unify.ai together 🦾**
+`lets-unify.ai <https://lets-unify.ai>`_ **together 🦾**
 
 
 Contents
@@ -246,7 +247,7 @@ The easiest way to set up Ivy is to install it using pip with the following comm
 
 ..
 
-    Keep in mind that this won't install any of the underlying frameworks (you will need at least one to run Ivy!). We will (very) soon offer support for multiple versions, but for now we have pinned Ivy to specific versions, so you'll need to install one of these:
+    Keep in mind that this won't install any of the underlying frameworks (you will need at least one to run Ivy!). We will (very) soon offer support for multiple versions, but for now we have pinned Ivy to specific versions, so you'll need to have one of these installed:
 
 +------------+-----------------+
 | Framework  | Pinned version  |
@@ -272,6 +273,9 @@ If you prefer to use containers, we also have pre-built Docker images with all t
 .. code-block:: bash
 
     ToDo: docker with GPU support should be explained here
+
+Installing from source
+######################
 
 Obviously, you can also install Ivy from source if you want to take advantage of the latest changes, but we can't ensure that everything will work as expected :sweat_smile:
 
@@ -316,7 +320,7 @@ The **Ivy Docs page** holds all the relevant information about Ivy's and it's fr
 
 There, you will find the **Design** page, which is an user-focused guide about the architecture and the building blocks of Ivy. Likewise, you can take a look at the **Deep dive**, which is oriented towards potential contributors of the code base and explains the nuances of Ivy in full detail 🔎. 
 
-Another important sections of the docs is **Background**, which contextualises the problem Ivy is trying to solve, and explains both (1) why is important to solve this problem and (2) how we are adhering to existing standards to make this happen. 
+Another important sections of the docs is **Background**, which contextualises the problem Ivy is trying to solve and the current `ML Explosion <https://lets-unify.ai/ivy/background/ml_explosion.html>`_, explaining both (1) why is important `to solve this problem? <https://lets-unify.ai/ivy/background/why_unify.html>`_ and (2) how we are adhering to existing `standards <https://lets-unify.ai/ivy/background/standardization.html>`_ to make this happen. 
 
 Lastly, you can also find there the **Related Work** section, which paints a clear picture of the role Ivy plays in the ML stack, comparing it to other existing solutions in terms of functionalities and level.
 
@@ -324,21 +328,7 @@ Lastly, you can also find there the **Related Work** section, which paints a cle
 Examples
 --------
 
-(ToDo)
-
-You can use Ivy to gain access to every Machine Learning or Deep Learning project out there, independently on the framework you are using!
-
-.. code-block:: python
-
-    import ivy
-
-    ivy.set_backend('torch')  # change to any backend!
-    model = MyModel()
-    optimizer = ivy.Adam(1e-4)
-    x_in = ivy.array([1., 2., 3.])
-    target = ivy.array([0.])
-
-There are a lot more examples in out examples page but feel free to check out some more framework-specific examples here :arrow_down:
+The examples page features a wide range of demos and tutorials showcasing the functionalities of Ivy along with multiple use cases, but feel free to check out some shorter framework-specific examples here ⬇
 
 .. raw:: html
 
@@ -876,6 +866,8 @@ Or you can use Ivy as a framework, breaking yourself (and your code) free from d
 
 .. code-block:: python
 
+    # ToDo: Change this with a different, more involved example
+
     import ivy
 
     class MyModel(ivy.Module):
@@ -953,21 +945,3 @@ It's a small way to show appreciation and help to continue to support this and o
       year={2021}
     }
 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-
-Background ToDo: Maybe remove this for now?
-----------
-
-| (a) `ML Explosion <https://lets-unify.ai/ivy/background/ml_explosion.html>`_
-| A huge number of ML tools have exploded onto the scene!
-|
-| (b) `Why Unify? <https://lets-unify.ai/ivy/background/why_unify.html>`_
-| Why should we try to unify them?
-|
-| (c) `Standardization <https://lets-unify.ai/ivy/background/standardization.html>`_
-| We’re collaborating with The `Consortium for Python Data API Standards <https://data-apis.org>`_
