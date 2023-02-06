@@ -129,7 +129,7 @@ These functions can be used eagerly and lazily. If you pass the neccesary argume
     ret = lazy_graph(x1)  # The transpiled graph is initialized, transpilation will happen here
     ret = lazy_graph(x1)  # This is now torch code and will be called efficiently
 
-If you want to learn more, you can find more information in the Ivy as a transpiler section of the docs.
+If you want to learn more, you can find more information in the Ivy as a transpiler section of the docs!
 
 When should I use Ivy as a transpiler?
 ######################################
@@ -139,31 +139,52 @@ If you want to use building blocks published in other frameworks (neural network
 Ivy as a framework
 -------------------
 
-TODO Lorem ipsum.
-TODO: Ivy API, Ivy stateful API, Ivy Container, Ivy array, slim down examples below to build just one example
-TODO: Review this:
+The Ivy framework is built on top of various essential components, mainly the **Backend Handler**, which manages what framework is being used behind the scenes and the **Backend functional APIs**, which provide framework-specific implementations of the Ivy functions. Likewise, classes like the :code:`ivy.Container` and :code:`ivy.Array` are also available, facilitating the use of structured data and array-like objects (learn more about them here!). 
 
-**Framework Agnostic Functions**
-
-In the example below we show how Ivy's concatenation function is compatible with tensors from different frameworks.
-This is the same for ALL Ivy functions. They can accept tensors from any framework and return the correct result.
+All of the functionalities in Ivy are exposed through the :code:`Ivy functional API` and the :code:`Ivy stateful API`. All functions in the functional API are **Framework Agnostic Functions**, which mean that we can use them like this:
 
 .. code-block:: python
 
+    import ivy
     import jax.numpy as jnp
     import tensorflow as tf
     import numpy as np
     import torch
 
-    import ivy
+    def mse_loss(y, target):
+        return ivy.mean((out - target)**2)
 
-    jax_concatted   = ivy.concat((jnp.ones((1,)), jnp.ones((1,))), -1)
-    tf_concatted    = ivy.concat((tf.ones((1,)), tf.ones((1,))), -1)
-    np_concatted    = ivy.concat((np.ones((1,)), np.ones((1,))), -1)
-    torch_concatted = ivy.concat((torch.ones((1,)), torch.ones((1,))), -1)
+    jax_mse   = mse_loss(jnp.ones((5,)), jnp.ones((5,)))
+    tf_mse    = mse_loss(tf.ones((5,)), tf.ones((5,)))
+    np_mse    = mse_loss(np.ones((5,)), np.ones((5,)))
+    torch_mse = mse_loss(torch.ones((5,)), torch.ones((5,)))
+
+In the example below we show how Ivy's functions are compatible with tensors from different frameworks.
+This is the same for ALL Ivy functions. They can accept tensors from any framework and return the correct result.
+
+The **Ivy stateful API**, on the other hand, allows you to define trainable modules and layers, which you can use alone or as a part of any other framework code!
 
 .. code-block:: python
 
+    import ivy
+
+    class MyModel(ivy.Module):
+        def __init__(self):
+            self.linear0 = ivy.Linear(3, 64)
+            self.linear1 = ivy.Linear(64, 1)
+            ivy.Module.__init__(self)
+
+        def _forward(self, x):
+            x = ivy.relu(self.linear0(x))
+            return ivy.sigmoid(self.linear1(x))
+
+
+If we put it all toghether, we'll have something like this. This example uses PyTorch as a backend framework,
+but the backend can easily be changed to your favorite frameworks, such as TensorFlow, or JAX.
+
+.. code-block:: python
+
+    # ToDo: use mse function as above
     import ivy
 
     class MyModel(ivy.Module):
@@ -193,12 +214,13 @@ This is the same for ALL Ivy functions. They can accept tensors from any framewo
 
     print('Finished training!')
 
-This example uses PyTorch as a backend framework,
-but the backend can easily be changed to your favorite frameworks, such as TensorFlow, or JAX.
 
-TODO: Mention extensions
+Last but no least, we are also working on specific extension totally written in Ivy and therefore usable within any framework, 
+covering topics like TODO
 
-You can find more information about Ivy as a framework in the docs.
+TODO: Maybe add small logos in a row?
+
+As always, you can find more information about Ivy as a framework in the docs!
 
 When should I use Ivy as a framework?
 ######################################
@@ -948,31 +970,3 @@ Background ToDo: Maybe remove this for now?
 |
 | (c) `Standardization <https://lets-unify.ai/ivy/background/standardization.html>`_
 | We’re collaborating with The `Consortium for Python Data API Standards <https://data-apis.org>`_
-
-Design ToDo: Maybe remove this for now?
-------
-
-| Ivy can fulfill two distinct purposes:
-|
-| 1. Serve as a transpiler between frameworks 🚧
-| 2. Serve as a new ML framework with multi-framework support ✅
-|
-| The Ivy codebase can then be split into three categories, and can be further split into 8 distinct submodules, each of which falls into one of these three categories as follows:
-
-.. image:: https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/design/submodule_dependency_graph.png?raw=true
-   :align: center
-   :width: 100%
-
-| (a) `Building Blocks <https://lets-unify.ai/ivy/design/building_blocks.html>`_
-| Backend functional APIs ✅
-| Ivy functional API ✅
-| Backend Handler ✅
-| Ivy Compiler 🚧
-|
-| (b) `Ivy as a Transpiler <https://lets-unify.ai/ivy/design/ivy_as_a_transpiler.html>`_
-| Front-end functional APIs 🚧
-|
-| (c) `Ivy as a Framework <https://lets-unify.ai/ivy/design/ivy_as_a_framework.html>`_
-| Ivy stateful API ✅
-| Ivy Container ✅
-| Ivy Array 🚧
