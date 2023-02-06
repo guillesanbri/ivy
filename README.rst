@@ -97,7 +97,6 @@ Contents
 * `Examples`_
 * `Contributing`_
 * `Community`_
-* `License`_
 * `Citation`_
 
 Ivy as a transpiler
@@ -889,18 +888,6 @@ In order to achieve the ambitious goal of unifying AI we definitely need as many
 Also! Feel free to follow us in Twitter 🐦 as well, we use it to share updates, sneak peeks, and all sorts of relevant news, certainly a great way to stay in the loop 😄
 
 Can't wait to see you there!
-
-
-License
-------------
-
-FixMe: Should this be included here at all? Maybe we can remove this section
-
-FixMe: Don't know if this is the place to explain that transpilation will be free for students/researchers
-
-ToDo: links if we keep it
-
-Almost all of the content of the repo is licensed under the Apache 2.0 license, which (TLDR; too legal, didn't read) allows you to use the code for just about anything. There is one caveat, the compiler/transpiler has its own license which you can access here, but fear not! code transpilation will always be free for academics and students 🧑‍🎓
 
 
 Citation
