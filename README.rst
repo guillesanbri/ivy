@@ -139,6 +139,8 @@ If you want to use building blocks published in other frameworks (neural network
 Ivy as a framework
 -------------------
 
+ToDo: Add links where relevant
+
 The Ivy framework is built on top of various essential components, mainly the **Backend Handler**, which manages what framework is being used behind the scenes and the **Backend functional APIs**, which provide framework-specific implementations of the Ivy functions. Likewise, classes like the :code:`ivy.Container` and :code:`ivy.Array` are also available, facilitating the use of structured data and array-like objects (learn more about them here!). 
 
 All of the functionalities in Ivy are exposed through the :code:`Ivy functional API` and the :code:`Ivy stateful API`. All functions in the functional API are **Framework Agnostic Functions**, which mean that we can use them like this:
@@ -184,7 +186,6 @@ but the backend can easily be changed to your favorite frameworks, such as Tenso
 
 .. code-block:: python
 
-    # ToDo: use mse function as above
     import ivy
 
     class MyModel(ivy.Module):
@@ -216,7 +217,7 @@ but the backend can easily be changed to your favorite frameworks, such as Tenso
 
 
 Last but no least, we are also working on specific extension totally written in Ivy and therefore usable within any framework, 
-covering topics like TODO
+covering topics like Mechanics, Computer Vision, Robotics, a Reinforcement Learning Gym or Memory.
 
 TODO: Maybe add small logos in a row?
 
@@ -230,9 +231,9 @@ As Ivy supports multiple backends, writing code in Ivy breaks you free from fram
 Setting up Ivy
 --------------
 
-Lorem ipsum
-
 ToDo: test each one of these procedures in various platforms, add links
+
+There are various ways to use Ivy, depending on your preferred environment:
 
 Installing using pip
 ####################
