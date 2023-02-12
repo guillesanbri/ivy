@@ -5,7 +5,25 @@
     [ ] Review typos
     [ ] Maybe add some images
 
-.. image:: https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true#gh-dark-mode-only
+.. _`Backend Handler`: https://lets-unify.ai/ivy/design/building_blocks.html#backend-handler
+.. _`Backend Functional APIs`: https://lets-unify.ai/ivy/design/building_blocks.html#backend-functional-apis
+
+.. _`Mechanics`: https://github.com/unifyai/mech
+.. _`Computer Vision`: https://github.com/unifyai/vision
+.. _`Robotics`: https://github.com/unifyai/robot
+.. _`Reinforcement Learning Gym`: https://github.com/unifyai/gym
+.. _`Memory`: https://github.com/unifyai/memory
+.. _`Builder tools`: https://github.com/unifyai/builder
+.. _`Models`: https://github.com/unifyai/models
+
+.. _`Examples page`: https://lets-unify.ai/demos/
+.. _`open tasks`: https://lets-unify.ai/ivy/contributing/open_tasks.html
+
+.. _`Discord`: https://discord.gg/sXyFF8tDtm
+.. _`Twitter`: https://twitter.com/letsunifyai
+
+
+.. image:: https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo_dark.png?raw=true#gh-dark-mode-only
    :width: 100%
 .. image:: https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true#gh-light-mode-only
    :width: 100%
@@ -44,7 +62,7 @@
 .. raw:: html
 
     <div style="display: block;" align="center">
-    <b><a href="">Website</a></b> | <b><a href="">Docs</a></b> | <b><a href="">Examples</a></b> | <b><a href="">Design</a></b> | <b><a href="">FAQ</a></b><br><br>
+    <b><a href="https://lets-unify.ai/">Website</a></b> | <b><a href="https://lets-unify.ai/ivy/">Docs</a></b> | <b><a href="https://lets-unify.ai/demos/">Examples</a></b> | <b><a href="https://lets-unify.ai/ivy/design.html">Design</a></b> | <b><a href="https://lets-unify.ai/ivy/faq.html">FAQ</a></b><br><br>
     
     <b>All of AI, at your fingertips</b>
     
@@ -130,7 +148,7 @@ These functions can be used eagerly and lazily. If you pass the neccesary argume
     ret = lazy_graph(x1)  # The transpiled graph is initialized, transpilation will happen here
     ret = lazy_graph(x1)  # This is now torch code and will be called efficiently
 
-If you want to learn more, you can find more information in the Ivy as a transpiler section of the docs!
+If you want to learn more, you can find more information in the `Ivy as a transpiler <https://lets-unify.ai/ivy/design/ivy_as_a_transpiler.html>`_ section of the docs!
 
 When should I use Ivy as a transpiler?
 ######################################
@@ -142,9 +160,9 @@ Ivy as a framework
 
 ToDo: Add links where relevant
 
-The Ivy framework is built on top of various essential components, mainly the **Backend Handler**, which manages what framework is being used behind the scenes and the **Backend functional APIs**, which provide framework-specific implementations of the Ivy functions. Likewise, classes like the :code:`ivy.Container` and :code:`ivy.Array` are also available, facilitating the use of structured data and array-like objects (learn more about them here!). 
+The Ivy framework is built on top of various essential components, mainly the `Backend Handler`_, which manages what framework is being used behind the scenes and the `Backend Functional APIs`_, which provide framework-specific implementations of the Ivy functions. Likewise, classes like the :code:`ivy.Container` and :code:`ivy.Array` are also available, facilitating the use of structured data and array-like objects (learn more about them `here! <https://lets-unify.ai/ivy/design/ivy_as_a_framework.html>`_). 
 
-All of the functionalities in Ivy are exposed through the :code:`Ivy functional API` and the :code:`Ivy stateful API`. All functions in the functional API are **Framework Agnostic Functions**, which mean that we can use them like this:
+All of the functionalities in Ivy are exposed through the :code:`Ivy functional API` and the :code:`Ivy stateful API`. All functions in the `Functional API <https://lets-unify.ai/ivy/design/building_blocks.html#ivy-functional-api>`_ are **Framework Agnostic Functions**, which mean that we can use them like this:
 
 .. code-block:: python
 
@@ -165,7 +183,7 @@ All of the functionalities in Ivy are exposed through the :code:`Ivy functional 
 In the example below we show how Ivy's functions are compatible with tensors from different frameworks.
 This is the same for ALL Ivy functions. They can accept tensors from any framework and return the correct result.
 
-The **Ivy stateful API**, on the other hand, allows you to define trainable modules and layers, which you can use alone or as a part of any other framework code!
+The `Ivy Stateful API <https://lets-unify.ai/ivy/design/ivy_as_a_framework/ivy_stateful_api.html>`_, on the other hand, allows you to define trainable modules and layers, which you can use alone or as a part of any other framework code!
 
 .. code-block:: python
 
@@ -218,11 +236,11 @@ but the backend can easily be changed to your favorite frameworks, such as Tenso
 
 
 Last but no least, we are also working on specific extension totally written in Ivy and therefore usable within any framework, 
-covering topics like Mechanics, Computer Vision, Robotics, a Reinforcement Learning Gym or Memory.
+covering topics like `Mechanics`_, `Computer Vision`_, `Robotics`_, a `Reinforcement Learning Gym`_, `Memory`_ and implementation of various `Models`_ or `Builder tools`_ with trainers, data loaders and more.
 
 TODO: Maybe add small logos in a row?
 
-As always, you can find more information about Ivy as a framework in the docs!
+As always, you can find more information about `Ivy as a framework in the docs! <https://lets-unify.ai/ivy/design/ivy_as_a_framework.html#ivy-as-a-framework>`_
 
 When should I use Ivy as a framework?
 ######################################
@@ -284,7 +302,7 @@ Obviously, you can also install Ivy from source if you want to take advantage of
     ToDo: instructions
 
 
-If you want to set up testing and various frameworks it's probably best to check out the **Contributing - Setting Up** page, where OS-specific and IDE-specific instructions and video tutorials to do so are available!
+If you want to set up testing and various frameworks it's probably best to check out the `Contributing - Setting Up <https://lets-unify.ai/ivy/contributing/setting_up.html#setting-up>`_ page, where OS-specific and IDE-specific instructions and video tutorials to do so are available!
 
 
 Access to the Transpiler API
@@ -314,21 +332,19 @@ You can find quite a lot more examples in the corresponding section below, but u
 Documentation
 -------------
 
-Todo: links
+The `Ivy Docs page <https://lets-unify.ai/ivy/>`_ holds all the relevant information about Ivy's and it's framework API reference. 
 
-The **Ivy Docs page** holds all the relevant information about Ivy's and it's framework API reference. 
+There, you will find the `Design <https://lets-unify.ai/ivy/design.html>`_ page, which is an user-focused guide about the architecture and the building blocks of Ivy. Likewise, you can take a look at the `Deep dive <https://lets-unify.ai/ivy/deep_dive.html>`_, which is oriented towards potential contributors of the code base and explains the nuances of Ivy in full detail 🔎. 
 
-There, you will find the **Design** page, which is an user-focused guide about the architecture and the building blocks of Ivy. Likewise, you can take a look at the **Deep dive**, which is oriented towards potential contributors of the code base and explains the nuances of Ivy in full detail 🔎. 
+Another important sections of the docs is `Background <https://lets-unify.ai/ivy/background.html>`_, which contextualises the problem Ivy is trying to solve and the current `ML Explosion <https://lets-unify.ai/ivy/background/ml_explosion.html>`_, explaining both (1) why is important `to solve this problem <https://lets-unify.ai/ivy/background/why_unify.html>`_ and (2) how we are adhering to existing `standards <https://lets-unify.ai/ivy/background/standardization.html>`_ to make this happen. 
 
-Another important sections of the docs is **Background**, which contextualises the problem Ivy is trying to solve and the current `ML Explosion <https://lets-unify.ai/ivy/background/ml_explosion.html>`_, explaining both (1) why is important `to solve this problem? <https://lets-unify.ai/ivy/background/why_unify.html>`_ and (2) how we are adhering to existing `standards <https://lets-unify.ai/ivy/background/standardization.html>`_ to make this happen. 
-
-Lastly, you can also find there the **Related Work** section, which paints a clear picture of the role Ivy plays in the ML stack, comparing it to other existing solutions in terms of functionalities and level.
+Lastly, you can also find there the `Related Work <https://lets-unify.ai/ivy/related_work.html>`_ section, which paints a clear picture of the role Ivy plays in the ML stack, comparing it to other existing solutions in terms of functionalities and level.
 
 
 Examples
 --------
 
-The examples page features a wide range of demos and tutorials showcasing the functionalities of Ivy along with multiple use cases, but feel free to check out some shorter framework-specific examples here ⬇
+The `Examples page`_ features a wide range of demos and tutorials showcasing the functionalities of Ivy along with multiple use cases, but feel free to check out some shorter framework-specific examples here ⬇
 
 .. raw:: html
 
@@ -897,11 +913,6 @@ Or you can use Ivy as a framework, breaking yourself (and your code) free from d
 
     print('Finished training!')
 
-.. _docs: https://lets-unify.ai/ivy
-.. _Colabs: https://drive.google.com/drive/folders/16Oeu25GrQsEJh8w2B0kSrD93w4cWjJAM?usp=sharing
-.. _`contributor guide`: https://lets-unify.ai/ivy/contributing.html
-.. _`open tasks`: https://lets-unify.ai/ivy/contributing/open_tasks.html
-
 Contributing
 ------------
 
@@ -921,11 +932,9 @@ Join our amazing community as a code contributor, and help accelerate our journe
 Community
 ------------
 
-ToDo: Add links to discord and twitter
+In order to achieve the ambitious goal of unifying AI we definitely need as many hands as possible on it! Whether you are a seasoned developer or just starting out, you'll find a place here! Join the Ivy community in our `Discord`_ 👾 server, which is the perfect place to ask questions, share ideas, and get help from both fellow developers and the Ivy Team directly!
 
-In order to achieve the ambitious goal of unifying AI we definitely need as many hands as possible on it! Whether you are a seasoned developer or just starting out, you'll find a place here! Join the Ivy community in our Discord 👾 server, which is the perfect place to ask questions, share ideas, and get help from both fellow developers and the Ivy Team directly!
-
-Also! Feel free to follow us in Twitter 🐦 as well, we use it to share updates, sneak peeks, and all sorts of relevant news, certainly a great way to stay in the loop 😄
+Also! Feel free to follow us in `Twitter`_ 🐦 as well, we use it to share updates, sneak peeks, and all sorts of relevant news, certainly a great way to stay in the loop 😄
 
 Can't wait to see you there!
 
