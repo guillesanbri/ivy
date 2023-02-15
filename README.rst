@@ -307,11 +307,31 @@ If you want to set up testing and various frameworks it's probably best to check
 Access to the Transpiler API
 ############################
 
-If you only want to use Ivy as a framework you can ignore this entirely, but if you want to try out Ivy's transpiler you'll have to sign up for an API key following the steps below. Fear not! This is entirely free, but keep in mind that we are on a limited time alpha, so expect some rough edges and share with us any bug you encounter! 
+If you only want to use Ivy as a framework you can ignore this entirely, but if you want to try out Ivy's transpiler you'll have to sign up and get an API key following the steps below. Fear not! This is entirely free, but keep in mind that the transpiler is currently in alpha, so expect some rough edges and please share with us any bug 🐛 you encounter! 
 
-.. code-block:: bash
+.. raw:: html
 
-    ToDo: add instructions and screenshots to login, setting up the API key etc.
+   <details>
+   <summary><h3>API key instructions</h3></summary>
+
+To get an API key you have to go to `Ivy's console page <https://console.lets-unify.ai>`_ and sign in with your preferred authentication method. Once you have logged in, you should see the following page.
+
+.. image:: https://raw.githubusercontent.com/guillesanbri/ivy/readme-revamp/screenshot-1b.png
+
+If you now click on "My Account", you'll find a "Generate API key" button. Once you click it, you'll be asked to complete a brief form with basic information if this is your first time logging into the console, otherwise, your API key will be displayed on the screen as shown below.
+
+.. image:: https://raw.githubusercontent.com/guillesanbri/ivy/readme-revamp/screenshot-2b.png
+
+Now that you have an API key, **you'll have to store it in a `key.pem` file located inside a `.ivy` directory**. Once those have been created, you must define an environment variable :code:`IVY_ROOT` that specifies the location of said directory, you can do this as you normally would in your preferred OS, or you can set it directly within your python script using `os`.
+
+.. code-block:: python
+
+    import os
+    os.environ["IVY_ROOT"] = ".ivy"
+
+.. raw:: html
+
+   </details>
 
 
 Using Ivy
