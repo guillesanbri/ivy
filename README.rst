@@ -1,6 +1,5 @@
 ..
     ToDo:
-    [ ] Change dark theme image to be white letters
     [ ] Remove links from collapsed examples
     [ ] Review typos
     [ ] Maybe add some images
@@ -876,7 +875,7 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
      </blockquote>
    </details>
 
-   <h3>I'm using Ivy&ensp;<img style="height: 1.75em; vertical-align:-40%" src="https://saas.lets-unify.ai/static/ivy.svg"></h3>
+   <h3>I'm using Ivy&ensp;<img style="height: 1.75em; vertical-align:-40%" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/ivy_logo_only.png"></h3>
    
 Or you can use Ivy as a framework, breaking yourself (and your code) free from deciding which community to support, allowing anyone to run your code in their framework of choice!
 
