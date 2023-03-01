@@ -126,10 +126,9 @@ This way, Ivy makes all ML-related projects available for you, independently of 
 
 .. code-block:: python
 
-    ivy.compile()  # Compile a function into an efficient graph, removing Ivy's wrapping and redundant code
-    ivy.transpile()  # Convert an arbitrary function from one framework to another
-    ivy.transpile_module()  # Convert any framework-specific module to another framework
-    # ToDo: Check final signatures of the functions
+    ivy.compile()     # Compiles a function into an efficient graph, removing Ivy's wrapping and redundant code
+    ivy.transpile()   # Converts framework specific code to a different framework
+    ivy.unify()       # Converts framework specific code to Ivy
 
 These functions can be used eagerly and lazily. If you pass the neccesary arguments, the function will be called instantly, otherwise, compilation/transpilation will happen the first time you invoke the function with the proper arguments.
 
@@ -138,14 +137,27 @@ These functions can be used eagerly and lazily. If you pass the neccesary argume
     import ivy
     ivy.set_backend("jax")
 
+    # Simple JAX function to transpile
     def test_fn(x):
         return jax.numpy.sum(x)
 
     x1 = ivy.array([1., 2.])
-    eager_graph = ivy.transpile(test_fn, to="torch", args=(x1,))  # Transpilation is called eagerly
-    lazy_graph = ivy.transpile(test_fn, to="torch")  # Transpilation is called lazily, we don't do anything at this point
-    ret = lazy_graph(x1)  # The transpiled graph is initialized, transpilation will happen here
-    ret = lazy_graph(x1)  # This is now torch code and will be called efficiently
+
+.. code-block:: python
+    
+    # Arguments are available -> transpilation happens eagerly
+    eager_graph = ivy.transpile(test_fn, to="torch", args=(x1,))
+    # eager_graph is now torch code and runs efficiently
+    ret = eager_graph(x1)
+
+.. code-block:: python
+    
+    # Arguments are not available -> transpilation happens lazily
+    lazy_graph = ivy.transpile(test_fn, to="torch") # nothing is transpiled here
+    # The transpiled graph is initialized, transpilation will happen here
+    ret = lazy_graph(x1)
+    # lazy_graph is now torch code and runs efficiently
+    ret = lazy_graph(x1)
 
 If you want to learn more, you can find more information in the `Ivy as a transpiler <https://lets-unify.ai/ivy/design/ivy_as_a_transpiler.html>`_ section of the docs!
 
@@ -156,8 +168,6 @@ If you want to use building blocks published in other frameworks (neural network
 
 Ivy as a framework
 -------------------
-
-ToDo: Add links where relevant
 
 The Ivy framework is built on top of various essential components, mainly the `Backend Handler`_, which manages what framework is being used behind the scenes and the `Backend Functional APIs`_, which provide framework-specific implementations of the Ivy functions. Likewise, classes like the :code:`ivy.Container` and :code:`ivy.Array` are also available, facilitating the use of structured data and array-like objects (learn more about them `here! <https://lets-unify.ai/ivy/design/ivy_as_a_framework.html>`_). 
 
@@ -262,6 +272,12 @@ The easiest way to set up Ivy is to install it using pip with the following comm
 
     pip install ivy-core
 
+or alternatively:
+
+.. code-block:: bash
+
+    python3 -m pip install ivy-core
+
 ..
 
     Keep in mind that this won't install any of the underlying frameworks (you will need at least one to run Ivy!). We will (very) soon offer support for multiple versions, but for now we have pinned Ivy to specific versions, so you'll need to have one of these installed:
@@ -287,9 +303,11 @@ If you prefer to use containers, we also have pre-built Docker images with all t
 
     docker pull unifyai/ivy:latest
 
+If you are working on a GPU device, you can pull from:
+
 .. code-block:: bash
 
-    ToDo: docker with GPU support should be explained here
+    docker pull unifyai/ivy:latest-gpu
 
 Installing from source
 ######################
@@ -298,8 +316,15 @@ Obviously, you can also install Ivy from source if you want to take advantage of
 
 .. code-block:: bash
 
-    ToDo: instructions
+    git clone https://github.com/unifyai/ivy.git
+    cd ivy 
+    pip install --user -e .
 
+or alternatively, for the last step:
+
+.. code-block:: bash
+
+    python3 -m pip install --user -e .
 
 If you want to set up testing and various frameworks it's probably best to check out the `Contributing - Setting Up <https://lets-unify.ai/ivy/contributing/setting_up.html#setting-up>`_ page, where OS-specific and IDE-specific instructions and video tutorials to do so are available!
 
@@ -339,13 +364,47 @@ Using Ivy
 
 You can find quite a lot more examples in the corresponding section below, but using Ivy is as simple as:
 
+.. raw:: html
+
+   <h4>Multi-backend Support</h4>
+
 .. code-block:: python
 
-    ToDo: short code snippet showing multi backend support
+    import ivy
+    import torch
+    import jax
+
+    ivy.set_backend("jax")
+
+    x = jax.numpy.array([1, 2, 3])
+    y = jax.numpy.array([3, 2, 1])
+    z = ivy.add(x, y)
+
+    ivy.set_backend('torch')
+
+    x = torch.tensor([1, 2, 3])
+    y = torch.tensor([3, 2, 1])
+    z = ivy.add(x, y)
+
+.. raw:: html
+
+   <h4>Transpilation API</h4>
 
 .. code-block:: python
 
-    ToDo: short code snippet showing transpilation
+    import ivy
+    import ivy.compiler.compiler as compiler
+    import torch
+    import jax
+
+    def jax_fn(x):
+        a = jax.numpy.dot(x, x)
+        b = jax.numpy.mean(x)
+        return x * a + b
+
+    # NOTE: set up of transpiler API key required
+    torch_fn = compiler.transpile(jax_fn, source="jax", to="torch", args=(jax.numpy.array([1], dtype="float32"),))
+    torch_fn(torch.tensor([1, 2, 3], dtype=torch.float32))
 
 
 Documentation
@@ -961,7 +1020,7 @@ Can't wait to see you there!
 Citation
 --------
 
-If you use Ivy for your work, please don't forget to give proper credit by including the accompanying paper 📄 in your references. 
+If you use Ivy for your work, please don't forget to give proper credit by including the accompanying `paper <https://arxiv.org/abs/2102.02886>`_ 📄 in your references. 
 It's a small way to show appreciation and help to continue to support this and other open source projects 🙌
 
 ::
@@ -972,4 +1031,3 @@ It's a small way to show appreciation and help to continue to support this and o
       journal={arXiv preprint arXiv:2102.02886},
       year={2021}
     }
-
