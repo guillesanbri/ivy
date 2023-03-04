@@ -428,18 +428,28 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
    <details>
    <summary><h3>I'm using PyTorch&ensp;<img style="height: 1.2em; vertical-align:-20%" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/pytorch_logo.png"></h3></summary>
-      <blockquote>If you are a PyTorch user, you can use Ivy to execute code from any other framework!
+      <blockquote>You can use Ivy to get PyTorch code from:
          <details>
             <summary><h4>From TensorFlow</h4></summary>
             <blockquote>
                <details>
-                  <summary>Any function</summary>
+                  <summary>Any library</summary>
 
 .. code-block:: python
 
     import ivy
+    import torch
+    import segmentation_models as sm
 
-    # ToDo: Write code
+    # transpile sm from tensorflow to torch
+    torch_sm = ivy.transpile(sm, source="tensorflow", to="torch")
+
+    # get some image-like arrays
+    output = torch.rand((1, 3, 512, 512))
+    target = torch.rand((1, 3, 512, 512))
+
+    # and use the transpiled version of any function from the library!
+    out = torch_sm.metrics.iou_score(output, target)
 
 .. raw:: html
 
@@ -457,7 +467,7 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
                </details>
                <details>
-                  <summary>Any library</summary>
+                  <summary>Any function</summary>
                   
 .. code-block:: python
 
@@ -475,13 +485,23 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
             <summary><h4>From Jax</h4></summary>
             <blockquote>
                <details>
-                  <summary>Any function</summary>
+                  <summary>Any library</summary>
                   
 .. code-block:: python
 
     import ivy
+    import rax
+    import torch
 
-    # ToDo: Write code
+    # transpile rax from jax to torch
+    torch_rax = ivy.transpile(rax, source="jax", to="torch")
+
+    # get some arrays
+    scores = torch.tensor([2.2, 1.3, 5.4])
+    labels = torch.tensor([1.0, 0.0, 0.0])
+
+    # and use the transpiled version of any function from the library!
+    out = torch_rax.poly1_softmax_loss(scores, labels)
 
 .. raw:: html
 
@@ -499,7 +519,7 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
                </details>
                <details>
-                  <summary>Any library</summary>
+                  <summary>Any function</summary>
                   
 .. code-block:: python
 
@@ -517,13 +537,22 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
             <summary><h4>From NumPy</h4></summary>
             <blockquote>
                <details>
-                  <summary>Any function</summary>
+                  <summary>Any library</summary>
                   
 .. code-block:: python
 
     import ivy
+    import torch
+    import madmom
 
-    # ToDo: Write code
+    # transpile madmon from numpy to torch
+    torch_madmom = ivy.transpile(madmom, source="numpy", to="torch")
+
+    # get some arrays
+    freqs = torch.arange(20) * 10
+
+    # and use the transpiled version of any function from the library!
+    out = torch_madmom.audio.filters.hz2midi(freqs)
 
 .. raw:: html
 
@@ -541,7 +570,7 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
                </details>
                <details>
-                  <summary>Any library</summary>
+                  <summary>Any function</summary>
                   
 .. code-block:: python
 
@@ -560,18 +589,36 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
    <details>
    <summary><h3>I'm using TensorFlow&ensp;<img style="height: 1.2em; vertical-align:-20%" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/tensorflow_logo.png"></h3></summary>
-      <blockquote>If you are a PyTorch user, you can use Ivy to execute code from any other framework!
+      <blockquote>You can use Ivy to get TensorFlow code from:
          <details>
             <summary><h4>From PyTorch</h4></summary>
             <blockquote>
                <details>
-                  <summary>Any function</summary>
+                  <summary>Any library</summary>
                   
 .. code-block:: python
 
     import ivy
+    import kornia
+    import requests
+    import numpy as np
+    import tensorflow as tf
+    from PIL import Image
 
-    # ToDo: Write code
+    # transpile kornia from torch to tensorflow
+    tf_kornia = ivy.transpile(kornia, source="torch", to="tensorflow")
+
+    # get an image
+    url = "http://images.cocodataset.org/train2017/000000000034.jpg"
+    raw_img = Image.open(requests.get(url, stream=True).raw)
+
+    # convert it to the format expected by kornia
+    img = np.array(raw_img)
+    img = tf.transpose(tf.constant(img), (2, 0, 1))
+    img = tf.expand_dims(img, 0) / 255
+
+    # and use the transpiled version of any function from the library!
+    out = tf_kornia.enhance.sharpness(img, 5)
 
 .. raw:: html
 
@@ -589,7 +636,7 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
                </details>
                <details>
-                  <summary>Any library</summary>
+                  <summary>Any function</summary>
                   
 .. code-block:: python
 
@@ -607,13 +654,23 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
             <summary><h4>From Jax</h4></summary>
             <blockquote>
                <details>
-                  <summary>Any function</summary>
+                  <summary>Any library</summary>
                   
 .. code-block:: python
 
     import ivy
+    import rax
+    import tensorflow as tf
 
-    # ToDo: Write code
+    # transpile rax from jax to tensorflow
+    tf_rax = ivy.transpile(rax, source="jax", to="tensorflow")
+
+    # get some arrays
+    scores = tf.constant([2.2, 1.3, 5.4])
+    labels = tf.constant([1.0, 0.0, 0.0])
+
+    # and use the transpiled version of any function from the library!
+    out = tf_rax.poly1_softmax_loss(scores, labels)
 
 .. raw:: html
 
@@ -631,7 +688,7 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
                </details>
                <details>
-                  <summary>Any library</summary>
+                  <summary>Any function</summary>
                   
 .. code-block:: python
 
@@ -649,13 +706,22 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
             <summary><h4>From NumPy</h4></summary>
             <blockquote>
                <details>
-                  <summary>Any function</summary>
+                  <summary>Any library</summary>
                   
 .. code-block:: python
 
     import ivy
+    import madmom
+    import tensorflow as tf
 
-    # ToDo: Write code
+    # transpile madmon from numpy to tensorflow
+    tf_madmom = ivy.transpile(madmom, source="numpy", to="tensorflow")
+
+    # get some arrays
+    freqs = tf.range(20) * 10
+
+    # and use the transpiled version of any function from the library!
+    out = tf_madmom.audio.filters.hz2midi(freqs)
 
 .. raw:: html
 
@@ -673,7 +739,7 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
                </details>
                <details>
-                  <summary>Any library</summary>
+                  <summary>Any function</summary>
                   
 .. code-block:: python
 
@@ -692,18 +758,34 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
    
       <details>
    <summary><h3>I'm using Jax&ensp;<img style="height: 1.2em; vertical-align:-20%" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/jax_logo.png"></h3></summary>
-      <blockquote>If you are a PyTorch user, you can use Ivy to execute code from any other framework!
+      <blockquote>You can use Ivy to get JAX code from:
          <details>
             <summary><h4>From PyTorch</h4></summary>
             <blockquote>
                <details>
-                  <summary>Any function</summary>
+                  <summary>Any library</summary>
                   
 .. code-block:: python
 
     import ivy
+    import kornia
+    import requests
+    import jax.numpy as jnp
+    from PIL import Image
 
-    # ToDo: Write code
+    # transpile kornia from torch to jax
+    jax_kornia = ivy.transpile(kornia, source="torch", to="jax")
+
+    # get an image
+    url = "http://images.cocodataset.org/train2017/000000000034.jpg"
+    raw_img = Image.open(requests.get(url, stream=True).raw)
+
+    # convert it to the format expected by kornia
+    img = jnp.transpose(jnp.array(raw_img), (2, 0, 1))
+    img = jnp.expand_dims(img, 0) / 255
+
+    # and use the transpiled version of any function from the library!
+    out = jax_kornia.enhance.sharpness(img, 5)
 
 .. raw:: html
 
@@ -721,7 +803,7 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
                </details>
                <details>
-                  <summary>Any library</summary>
+                  <summary>Any function</summary>
                   
 .. code-block:: python
 
@@ -739,13 +821,25 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
             <summary><h4>From TensorFlow</h4></summary>
             <blockquote>
                <details>
-                  <summary>Any function</summary>
+                  <summary>Any library</summary>
                   
 .. code-block:: python
 
     import ivy
+    import jax
+    import segmentation_models as sm
 
-    # ToDo: Write code
+    # transpile sm from tensorflow to jax
+    jax_sm = ivy.transpile(sm, source="tensorflow", to="jax")
+
+    # get some image-like arrays
+    key = jax.random.PRNGKey(23)
+    key1, key2 = jax.random.split(key)
+    output = jax.random.uniform(key1, (1, 3, 512, 512))
+    target = jax.random.uniform(key2, (1, 3, 512, 512))
+
+    # and use the transpiled version of any function from the library!
+    out = jax_sm.metrics.iou_score(output, target)
 
 .. raw:: html
 
@@ -763,7 +857,7 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
                </details>
                <details>
-                  <summary>Any library</summary>
+                  <summary>Any function</summary>
                   
 .. code-block:: python
 
@@ -781,13 +875,22 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
             <summary><h4>From NumPy</h4></summary>
             <blockquote>
                <details>
-                  <summary>Any function</summary>
+                  <summary>Any library</summary>
                   
 .. code-block:: python
 
     import ivy
+    import madmom
+    import jax.numpy as jnp
 
-    # ToDo: Write code
+    # transpile madmon from numpy to jax
+    jax_madmom = ivy.transpile(madmom, source="numpy", to="jax")
+
+    # get some arrays
+    freqs = jnp.arange(20) * 10
+
+    # and use the transpiled version of any function from the library!
+    out = jax_madmom.audio.filters.hz2midi(freqs)
 
 .. raw:: html
 
@@ -805,7 +908,7 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
                </details>
                <details>
-                  <summary>Any library</summary>
+                  <summary>Any function</summary>
                   
 .. code-block:: python
 
@@ -824,18 +927,34 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
    
       <details>
    <summary><h3>I'm using NumPy&ensp;<img style="height: 1.2em; vertical-align:-20%" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/numpy_logo.png"></h3></summary>
-      <blockquote>If you are a PyTorch user, you can use Ivy to execute code from any other framework!
+      <blockquote>You can use Ivy to get NumPy code from:
          <details>
             <summary><h4>From PyTorch</h4></summary>
             <blockquote>
                <details>
-                  <summary>Any function</summary>
+                  <summary>Any library</summary>
                   
 .. code-block:: python
 
     import ivy
+    import kornia
+    import requests
+    import numpy as np
+    from PIL import Image
 
-    # ToDo: Write code
+    # transpile kornia from torch to np
+    np_kornia = ivy.transpile(kornia, source="torch", to="numpy")
+
+    # get an image
+    url = "http://images.cocodataset.org/train2017/000000000034.jpg"
+    raw_img = Image.open(requests.get(url, stream=True).raw)
+
+    # convert it to the format expected by kornia
+    img = np.transpose(np.array(raw_img), (2, 0, 1))
+    img = np.expand_dims(img, 0) / 255
+
+    # and use the transpiled version of any function from the library!
+    out = np_kornia.enhance.sharpness(img, 5)
 
 .. raw:: html
 
@@ -853,7 +972,7 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
                </details>
                <details>
-                  <summary>Any library</summary>
+                  <summary>Any function</summary>
                   
 .. code-block:: python
 
@@ -871,13 +990,23 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
             <summary><h4>From TensorFlow</h4></summary>
             <blockquote>
                <details>
-                  <summary>Any function</summary>
+                  <summary>Any library</summary>
                   
 .. code-block:: python
 
     import ivy
+    import numpy as np
+    import segmentation_models as sm
 
-    # ToDo: Write code
+    # transpile sm from tensorflow to numpy
+    np_sm = ivy.transpile(sm, source="tensorflow", to="numpy")
+
+    # get some image-like arrays
+    output = np.random.rand(1, 3, 512, 512).astype(dtype=np.float32)
+    target = np.random.rand(1, 3, 512, 512).astype(dtype=np.float32)
+
+    # and use the transpiled version of any function from the library!
+    out = np_sm.metrics.iou_score(output, target)
 
 .. raw:: html
 
@@ -895,7 +1024,7 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
                </details>
                <details>
-                  <summary>Any library</summary>
+                  <summary>Any function</summary>
                   
 .. code-block:: python
 
@@ -913,13 +1042,23 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
             <summary><h4>From Jax</h4></summary>
             <blockquote>
                <details>
-                  <summary>Any function</summary>
+                  <summary>Any library</summary>
                   
 .. code-block:: python
 
     import ivy
+    import rax
+    import numpy as np
 
-    # ToDo: Write code
+    # transpile rax from jax to numpy
+    np_rax = ivy.transpile(rax, source="jax", to="numpy")
+
+    # get some arrays
+    scores = np.array([2.2, 1.3, 5.4])
+    labels = np.array([1.0, 0.0, 0.0])
+
+    # and use the transpiled version of any function from the library!
+    out = np_rax.poly1_softmax_loss(scores, labels)
 
 .. raw:: html
 
@@ -937,7 +1076,7 @@ The `Examples page`_ features a wide range of demos and tutorials showcasing the
 
                </details>
                <details>
-                  <summary>Any library</summary>
+                  <summary>Any function</summary>
                   
 .. code-block:: python
 
